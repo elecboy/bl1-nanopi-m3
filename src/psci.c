@@ -87,7 +87,8 @@ void psciHandler(unsigned long *regs)
         break;
     default:
         printf("psciHandler FATAL: unknown function %x\r\n", regs[0]);
-        boardReset();
+        result = -1;
+        //boardReset();
     }
     regs[0] = result;
 }
